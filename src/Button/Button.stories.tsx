@@ -1,8 +1,12 @@
 /** @jsxImportSource @emotion/react */
-import { css } from "@emotion/react";
+import { boolean, select, text, withKnobs } from "@storybook/addon-knobs";
+
 import Button from "./Button";
-import { withKnobs, text, boolean, select } from "@storybook/addon-knobs";
+import ButtonGroup from "src/ButtonGroup/ButtonGroup";
+import Icon from "src/Icon/Icon";
 import { action } from "@storybook/addon-actions";
+import { css } from "@emotion/react";
+
 export default {
   title: "components|Button",
   component: Button,
@@ -105,6 +109,26 @@ export const customSized = () => {
       <div>
         <Button width="100%">FULL WIDTH</Button>
       </div>
+    </div>
+  );
+};
+
+export const withIcon = () => {
+  return (
+    <div>
+      <ButtonGroup>
+        <Button size="small">
+          <Icon icon="heart" />
+          LIKE
+        </Button>
+        <Button>
+          <Icon icon="heart" />
+          LIKE
+        </Button>
+        <Button size="big">
+          <Icon icon="heart" /> LIKE
+        </Button>
+      </ButtonGroup>
     </div>
   );
 };

@@ -1,5 +1,5 @@
 /** @jsxImportSource @emotion/react */
-import { jsx, css } from "@emotion/react";
+import { css, jsx } from "@emotion/react";
 
 import { PropsWithChildren } from "react";
 
@@ -58,6 +58,9 @@ const themes = {
   primary: css`
     background: #20c997;
     color: white;
+    svg {
+      fill: white;
+    }
     &:hover {
       background: #38d9a9;
     }
@@ -71,6 +74,9 @@ const themes = {
   secondary: css`
     background: #e9ecef;
     color: #343a40;
+    svg {
+      fill: #343a40;
+    }
     &:hover {
       background: #f1f3f5;
     }
@@ -79,11 +85,17 @@ const themes = {
     }
     &:disabled {
       color: #c6d3e1;
+      svg {
+        fill: #c6d3e1;
+      }
     }
   `,
   tertiary: css`
     background: none;
     color: #20c997;
+    svg {
+      fill: #20c997;
+    }
     &:hover {
       background: #e6fcf5;
     }
@@ -92,11 +104,16 @@ const themes = {
     }
     &:disabled {
       color: #bcd9d0;
+      svg {
+        fill: #bcd9d0;
+      }
     }
   `,
 };
 
 const style = css`
+  display: flex;
+  align-items: center;
   outline: none;
   border: none;
   box-sizing: border-box;
@@ -117,9 +134,13 @@ const style = css`
   &:active {
     background: #12b886;
   }
-
   &:disabled {
     cursor: not-allowed;
+  }
+
+  svg {
+    width: 1em;
+    margin-right: 1em;
   }
 `;
 

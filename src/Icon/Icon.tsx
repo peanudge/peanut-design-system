@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
-import { jsx, css } from "@emotion/react";
 import * as icons from "./svg";
+
 import { PropsWithChildren } from "react";
 
 type IconType = keyof typeof icons;
@@ -17,10 +17,15 @@ export type IconProps = {
   className?: string;
 };
 
+/**
+ * Icon 에서 사용될 SVG는 width,height를 가져서는 안된다.
+ * @param param0
+ * @returns
+ */
 const Icon: React.FC<PropsWithChildren<IconProps>> = ({
   icon,
   color,
-  size,
+  size = "24px",
   className,
 }) => {
   const SVGIcon = icons[icon];
