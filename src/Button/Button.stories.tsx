@@ -3,37 +3,44 @@ import Button from "./Button";
 import ButtonGroup from "src/ButtonGroup/ButtonGroup";
 import Icon from "src/Icon/Icon";
 import { css } from "@emotion/react";
-import {  ComponentStory, ComponentMeta } from "@storybook/react"
+import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 export default {
   title: "components|Button",
   component: Button,
 } as ComponentMeta<typeof Button>;
- 
-export const button:ComponentStory<typeof Button> = (args) => <Button {...args} />
+
+const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
+
+export const button = Template.bind({});
 
 button.args = {
-  children: "Click",
-  theme: 'primary',
-  size: 'medium', 
-  disabled: false,
-}
+  children: "Click", 
+};
 
 button.story = {
   name: "Default",
 };
 
-export const primaryButton = () => {
-  return <Button>PRIMARY</Button>;
-};
- 
+export const primaryButton = Template.bind({});
 
-export const secondaryButton = () => {
-  return <Button theme="secondary">SECONDARY</Button>;
+primaryButton.args = {
+  children: "Primary",
+  theme: "primary",
 };
 
-export const tertiaryButton = () => {
-  return <Button theme="tertiary">TERTIARY</Button>;
+export const secondaryButton = Template.bind({});
+
+secondaryButton.args = {
+  children: "SECONDARY",
+  theme: "secondary",
+};
+
+export const tertiaryButton = Template.bind({});
+
+tertiaryButton.args = {
+  children: "TERTIARY",
+  theme: "tertiary",
 };
 
 const buttonWrapper = css`
