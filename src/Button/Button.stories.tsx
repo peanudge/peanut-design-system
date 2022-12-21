@@ -1,40 +1,23 @@
 /** @jsxImportSource @emotion/react */
-import { boolean, select, text, withKnobs } from "@storybook/addon-knobs";
-
 import Button from "./Button";
 import ButtonGroup from "src/ButtonGroup/ButtonGroup";
 import Icon from "src/Icon/Icon";
-import { action } from "@storybook/addon-actions";
 import { css } from "@emotion/react";
+import {  ComponentStory, ComponentMeta } from "@storybook/react"
 
 export default {
   title: "components|Button",
   component: Button,
-  decorators: [withKnobs],
-};
+} as ComponentMeta<typeof Button>;
+ 
+export const button:ComponentStory<typeof Button> = (args) => <Button {...args} />
 
-export const button = () => {
-  const label = text("children", "BUTTON");
-  const size = select("size", ["small", "medium", "big"], "medium");
-  const theme = select(
-    "theme",
-    ["primary", "secondary", "tertiary"],
-    "primary"
-  );
-  const disabled = boolean("disabled", false);
-  const width = text("width", "");
-  return (
-    <Button
-      size={size}
-      theme={theme}
-      disabled={disabled}
-      width={width}
-      onClick={action("onClick")}
-    >
-      {label}
-    </Button>
-  );
-};
+button.args = {
+  children: "Click",
+  theme: 'primary',
+  size: 'medium', 
+  disabled: false,
+}
 
 button.story = {
   name: "Default",
@@ -43,6 +26,7 @@ button.story = {
 export const primaryButton = () => {
   return <Button>PRIMARY</Button>;
 };
+ 
 
 export const secondaryButton = () => {
   return <Button theme="secondary">SECONDARY</Button>;

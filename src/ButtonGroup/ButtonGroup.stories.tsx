@@ -1,34 +1,28 @@
 /** @jsxImportSource @emotion/react */
-import { css } from "@emotion/react";
-import { boolean, radios, text, withKnobs } from "@storybook/addon-knobs";
-import React from "react";
+// import { boolean, radios, text, withKnobs } from "@storybook/addon-knobs";
 import ButtonGroup from "./ButtonGroup";
 import Button from "../Button/Button"
+import { ComponentStory } from "@storybook/react";
 
 export default {
     title: "components|ButtonGroup",
-    component: ButtonGroup,
-    decorators: [withKnobs],
+    component: ButtonGroup, 
 };
   
-export const buttonGroup = () => {
-    const direction = radios(
-        'direction',
-        { Row: 'row', Column: 'column'},
-        'row'
-    )
-
-    const rightAlign = boolean('rightAlign', false);
-    const gap = text('gap', '0.5rem');
-
-    return <ButtonGroup direction={direction} rightAlign={rightAlign} gap={gap}>
+export const buttonGroup: ComponentStory<typeof ButtonGroup> = (args) => {
+      return <ButtonGroup {...args}>
         <Button theme="tertiary">취소</Button>
     </ButtonGroup>
-    
+}
+
+buttonGroup.args = {
+  direction: 'row',
+  rightAlign: false,
+  gap: '0.5rem'
 }
 
 buttonGroup.story = {
-    name: "Defatul"
+    name: "Default"
 }
 
 export const rightAlign = () => {
