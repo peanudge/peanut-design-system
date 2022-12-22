@@ -1,6 +1,5 @@
 /** @jsxImportSource @emotion/react */
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import { css } from "@emotion/react";
 import Dialog from "./Dialog";
 
 export default {
