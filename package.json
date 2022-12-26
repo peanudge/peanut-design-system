@@ -1,11 +1,14 @@
 {
   "name": "peanut-design-system",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "module": "dist/index.js",
   "main": "dist/index.js",
   "license": "MIT",
   "types": "dist/types/index.d.ts",
+  "files": [
+    "/dist"
+  ],
   "devDependencies": {
     "@babel/core": "^7.20.7",
     "@babel/plugin-transform-runtime": "^7.19.6",
