@@ -6,7 +6,8 @@
   "license": "MIT",
   "types": "dist/types/index.d.ts",
   "files": [
-    "/dist"
+    "/dist",
+    "/src"
   ],
   "devDependencies": {
     "@babel/core": "^7.20.7",
